@@ -69,7 +69,6 @@ ol {
   align-items: flex-end;
   gap: 30px;
   inline-size: 1140px;
-  min-block-size: 534px;
 }
 
 /* Левая колонка */
@@ -99,6 +98,7 @@ ol {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 /* Форма */
@@ -186,8 +186,7 @@ ol {
 }
 
 /* Фокус-обводка на label только при focus-visible */
-.search-form__label:has(.search-form__textfield:focus-visible),
-.search-form__label:has(.search-form__checkbox:focus-visible) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid #fff;
   outline-offset: 2px;
 }
@@ -300,10 +299,12 @@ ol {
 
 .content__video-card-description-container {
   flex-grow: 1;
+   min-inline-size: 0;
   padding: 2px 2px 0 0;
 }
 
 .content__video-card-title {
+  inline-size: 100%;
   font-family: Oswald, sans-serif;
   font-weight: 700;
   font-size: 30px;
@@ -316,7 +317,7 @@ ol {
 
 .content__video-card-description {
   font-size: 18px;
-  line-height: 16.2px;
+  line-height: 0.9;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
